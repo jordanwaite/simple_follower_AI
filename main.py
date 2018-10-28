@@ -84,7 +84,7 @@ class Game:
         pg.display.flip()
 
     def player_lead(self, x, y):
-        # Takes in the player's current (x,y) position, creates a list of the previous positions, and creates an
+        # Takes in the player's current (x, y) position, creates a list of the previous positions, and creates an
         # future prediction of where the player will be from the previous positions bases on <player_lead_dist value>.
         # The list will be size of <player_lead_dist>, the larger the value the further ahead the lead point will be.
         self.previous_enemy_x_pos.insert(0, x)
@@ -97,7 +97,7 @@ class Game:
         x_lead_dist = self.previous_enemy_x_pos[0] - self.previous_enemy_x_pos[-1]
         y_lead_dist = self.previous_enemy_y_pos[0] - self.previous_enemy_y_pos[-1]
 
-        # Will print the (x,y) lead distance values every <self.wait> milliseconds.
+        # Will print how many pixels the player's future (x, y) position is every <self.wait> milliseconds.
         now = pg.time.get_ticks()
         if now - self.last > self.wait:
             self.last = now
